@@ -1,0 +1,9 @@
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.category.capitalize %></p>
+<p><%= @restaurant.address %></p>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li>Rating: <%= review.rating %>/5 - <%= review.content %></li>
+  <% end %>
+</ul>
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
